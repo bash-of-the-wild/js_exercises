@@ -126,15 +126,44 @@ p awesomesauced(["a", "b", "c", "d", "e"])
 # Someone just bought two chairs. Change the hash such that the chair amount is 3.
 # The final result should be: {chair: 3, table: 2}
 
+item_amounts = {"chair" => 5, "table" => 2}
+item_amounts["chair"] -= 2
+p item_amounts
+
 
 # Start with the hash: item_amounts = {chair: 5, table: 2}
 # You received 7 desks to sell. Change the hash to include desks.
 # The final result should be: {chair: 5, table: 2, desk: 7}
 
+item_amounts = {"chair" => 5, "table" => 2}
+item_amounts["desks"] = 7
+p item_amounts
 
 # Write a method that accepts a number and returns its factorial.
 # For example, the factorial of 5 is 5 * 4 * 3 * 2 * 1 = 120.
 
+def factorial(number) {
+  product = 1
+
+  while number > 0
+    product *= number
+    number -= 1
+  end
+
+  return product
+}
+
+console.log(factorial(5));
 
 # Write a method that accepts two arrays of numbers, and prints the sum of every combination of numbers from first and second array. 
 # For example, if the method receives [1, 5, 10] and [100, 500, 1000], the method should print a list: 101, 501, 1001, 105, 505, 1005, 110, 510, 1010].
+
+def print_sums(array_1, array_2) {
+  array_1.each do |number_1|
+    array_2.each do |number_2|
+      puts number_1 + number_2
+    end
+  end
+}
+
+print_sums([1, 5, 10], [100, 500, 1000]);
